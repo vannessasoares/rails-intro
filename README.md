@@ -7,7 +7,7 @@ General advice:  This homework involves modifying RottenPotatoes in various ways
 
 Remember, commit early and often!
 
-Preparation: If you've never used Rails before please follow these screencasts to work through chapter 4 of the ESaaS textbook to create a rottenpotatoes rails app from scratch.  This assignment assumes that you have a working version of RottenPotatoes running locally and deployed on Heroku. Please follow these steps to make an initial deployment to Heroku:
+Preparation: If you've never used Rails before please follow these screencasts http://goo.gl/tc8Ign to create a rottenpotatoes rails app from scratch.  This assignment assumes that you have a working version of RottenPotatoes running locally and deployed on Heroku. Please follow these steps to make an initial deployment to Heroku:
 
 Clone the assignment skeleton:
 
