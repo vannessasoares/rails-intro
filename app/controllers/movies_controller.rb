@@ -7,12 +7,14 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @all_ratings = Movie.pluck(:rating).uniq
+
     sort = params[:sort]
     if sort == "title"
-        @movies = Movie.all.sort_by(&:title)
+        @movies = Movie.all(:order => "title")
         @title_header = "hilite"
     elsif sort == "release_date"
-        @movies = Movie.all.sort_by(&:release_date)
+        @movies = Movie.all(:order => "release_date")
         @release_date_header = "hilite"
     else 
         @movies = Movie.all
