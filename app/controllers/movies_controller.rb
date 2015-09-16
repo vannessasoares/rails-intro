@@ -7,18 +7,18 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @all_ratings = Movie.pluck(:rating).uniq #pluck é o mesmo que # SELECT movie.rating FROM movie
-
+    @all_ratings = Movie.rating_list
+    
 
     sort = params[:sort]
-    if sort == "title"
+    if sort.nil?
+        @movies = Movie.all
+    elsif sort == "title"
         @movies = Movie.all(:order => "title")
         @title_header = "hilite"
     elsif sort == "release_date"
         @movies = Movie.all(:order => "release_date")
         @release_date_header = "hilite"
-    else 
-        @movies = Movie.where(rating: "G")
     end
   end
 
