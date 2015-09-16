@@ -7,7 +7,8 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @all_ratings = Movie.pluck(:rating).uniq
+    @all_ratings = Movie.pluck(:rating).uniq #pluck é o mesmo que # SELECT movie.rating FROM movie
+
 
     sort = params[:sort]
     if sort == "title"
@@ -17,7 +18,7 @@ class MoviesController < ApplicationController
         @movies = Movie.all(:order => "release_date")
         @release_date_header = "hilite"
     else 
-        @movies = Movie.all
+        @movies = Movie.where(rating: "G")
     end
   end
 
